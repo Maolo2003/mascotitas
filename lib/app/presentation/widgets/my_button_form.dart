@@ -1,35 +1,33 @@
 import 'package:flutter/material.dart';
-
 class MyButtonForm extends StatelessWidget {
 
   final String text;
   //final VoidCallback onPressed;
   final Function()? onTab;
-
   const MyButtonForm(
-      {
-        super.key,
-        required this.text,
-        //required this.onPressed,
-        this.onTab,
-      }
-      );
+  {
+    super.key,
+    required this.text,
+    //required this.onPressed,
+    this.onTab
+  }
+  );
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return  InkWell(
       onTap: onTab,
       child: Container(
         alignment: Alignment.center,
         height: 50,
-        decoration: BoxDecoration(
+        decoration:  BoxDecoration(
           color: Theme.of(context).colorScheme.primary,
           borderRadius: BorderRadius.circular(6.0),
           boxShadow: [
             BoxShadow(
-                color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
-                blurRadius: 7,
-                offset: const Offset(0, 5)
+              color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
+              blurRadius: 7,
+              offset: const Offset(0, 5)
             ),
           ],
         ),
@@ -41,6 +39,7 @@ class MyButtonForm extends StatelessWidget {
           ),
         ),
       ),
+
     );
   }
 }
