@@ -1,15 +1,16 @@
 //Se crea la clase AppTheme que contiene el tema de la aplicación
 import 'package:flutter/material.dart';
 
-const Color _customColor = Color(0xFF027373);
+const Color _customColor = Color(0xFF06CBDB);
 
 // Seleccionar los colores de su aplicación NO UTILIZAR LOS COLORES DE EJEMPLO
 const List<Color> _colorTheme=[
   _customColor,
-  Color(0xFF0D8C7F),
-  Color(0xFF65A69F),
+  Color(0xFF06CBDB),
+  Color(0xFFC20000),
   Color(0xFF9BBFBC),
   Color(0xFFF0F1F2),
+  Color(0xFFC20000),
 ];
 
 class AppTheme{
