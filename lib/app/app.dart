@@ -9,11 +9,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedThemeColor: 5).theme(),
-      home: const LoginView(),
+
     );
   }
 }

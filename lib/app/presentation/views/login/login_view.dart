@@ -1,3 +1,4 @@
+import 'package:go_router/go_router.dart';
 import 'package:mascotitas/app/presentation/views/login/widgets/login_divider.dart';
 import 'package:mascotitas/app/presentation/widgets/my_button_form.dart';
 import 'package:mascotitas/app/presentation/widgets/form_text_field.dart';
@@ -124,7 +125,12 @@ class LoginView extends StatelessWidget {
                             ),
                           ),
                           TextButton(
-                              onPressed:(){},
+                              onPressed:(){
+                                context.push(context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const RegisterView()),
+                                );
+                              },
                               child: Text('Sing up',
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
