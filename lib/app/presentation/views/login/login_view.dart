@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mascotitas/app/presentation/widgets/my_social_button.dart';
 
+import '../register/register_view.dart';
+
 
 class LoginView extends StatelessWidget {
 
@@ -126,9 +128,10 @@ class LoginView extends StatelessWidget {
                           ),
                           TextButton(
                               onPressed:(){
-                                context.push(context,
+                                Navigator.push(context,
                                   MaterialPageRoute(
-                                    builder: (context) => const RegisterView()),
+                                    builder: (context) => const RegisterView()
+                                  ),
                                 );
                               },
                               child: Text('Sing up',
