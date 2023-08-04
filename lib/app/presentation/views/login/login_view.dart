@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_divider.dart';
 import 'package:sekerme_ecommerce/app/presentation/widgets/form_text_field.dart';
 import 'package:sekerme_ecommerce/app/presentation/widgets/my_button_form.dart';
 
@@ -18,8 +19,12 @@ class LoginView extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(8.0),
                 child: Column(
-                  children: [SvgPicture.asset('assets/images/MyMarca.svg',
-                    colorFilter:  ColorFilter.mode(
+                  children: [
+                    SvgPicture.asset('assets/images/logo_mascotitas.svg',
+                      alignment: Alignment.topCenter,
+                      height: 100,
+                      width: 100,
+                      colorFilter:  ColorFilter.mode(
                         Theme.of(context).colorScheme.primary, BlendMode.srcIn
                     ),
                   ),
@@ -65,13 +70,8 @@ class LoginView extends StatelessWidget {
                         text: 'Login',
                         onTab: (){},
                     ),
-
-
-
-
-
-
-
+                    const SizedBox(height: 20,),
+                  const LoginDivider(),
                   ],
                 ),
             ),
