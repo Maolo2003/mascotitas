@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_divider.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/form_text_field.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/my_button_form.dart';
+import 'package:mascoticas/app/presentation/views/login/widgets/login_divider.dart';
+import 'package:mascoticas/app/presentation/widgets/form_text_field.dart';
+import 'package:mascoticas/app/presentation/widgets/my_button_form.dart';
 
 class LoginView extends StatelessWidget {
 
