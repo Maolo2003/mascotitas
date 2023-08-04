@@ -21,6 +21,12 @@ class LoginDivider extends StatelessWidget {
           ),
           ),
         ),
+        Expanded(
+          child: Divider(
+            thickness: 1.5,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
 
       ],
     );
