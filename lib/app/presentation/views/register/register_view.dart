@@ -21,6 +21,9 @@ class RegisterView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [SvgPicture.asset('assets/images/logo_mascotitas.svg',
+                alignment: Alignment.topCenter,
+                height: 100,
+                width: 100,
                 colorFilter:  ColorFilter.mode(
                     Theme.of(context).colorScheme.primary, BlendMode.srcIn
                 ),
@@ -29,6 +32,8 @@ class RegisterView extends StatelessWidget {
 
                 Text("Register",
                   style: TextStyle(
+                    fontSize: 20,
+                    height: 2,
                     color: Theme.of(context).colorScheme.primary,
                   ),
                 ),

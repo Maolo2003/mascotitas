@@ -6,6 +6,9 @@ import 'package:go_router/go_router.dart';
 
 //Archivo que contiene los links de las vistas
 import 'package:sekerme_ecommerce/app/presentation/views/views_links.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+import '../../presentation/views/forgot_password/forgot_ password_view.dart';
 
 
 final appRouter = GoRouter(
@@ -15,6 +18,16 @@ final appRouter = GoRouter(
   routes: [
     GoRoute(
       path: '/',
+      builder: (context, state) {
+          if(Supabase.instance.client.auth.currentUser != null){
+            return const HomeView();
+          } else {
+            return const LoginView();
+          }
+        },
+    ),
+    GoRoute(
+      path: '/home',
       name: HomeView.name,
       builder: (context, state) => const HomeView(),
     ),
@@ -28,7 +41,11 @@ final appRouter = GoRouter(
       name: LoginView.name,
       builder: (context, state) => const LoginView(),
     ),
-
+    GoRoute(
+      path: '/forgot_password',
+      name: ForgotPasswordView.name,
+      builder: (context, state) => const ForgotPasswordView(),
+    ),
   ],
 
 );

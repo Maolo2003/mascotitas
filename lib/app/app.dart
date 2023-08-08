@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'config/router/app_route.dart';
 import 'config/themes/theme.dart';
 import 'presentation/views/views_links.dart';
 
@@ -9,11 +10,13 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedThemeColor: 5).theme(),
-      home: const RegisterView(),
+      routeInformationProvider: appRouter.routeInformationProvider,
+      routeInformationParser: appRouter.routeInformationParser,
+      routerDelegate: appRouter.routerDelegate,
     );
   }
 }

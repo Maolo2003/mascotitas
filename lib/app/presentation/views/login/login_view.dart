@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sekerme_ecommerce/app/presentation/views/forgot_password/forgot_%20password_view.dart';
+import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_divider.dart';
 import 'package:sekerme_ecommerce/app/presentation/widgets/form_text_field.dart';
 import 'package:sekerme_ecommerce/app/presentation/widgets/my_button_form.dart';
+import 'package:sekerme_ecommerce/app/presentation/widgets/my_social_buttons.dart';
 import '../../../config/themes/theme.dart';
+import '../register/register_view.dart';
 
 
 class LoginView extends StatelessWidget {
@@ -21,16 +25,21 @@ class LoginView extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [SvgPicture.asset('assets/images/logo_mascotitas.svg',
-                colorFilter:  ColorFilter.mode(
+              children: [
+                SvgPicture.asset('assets/images/logo_mascotitas.svg',
+                  alignment: Alignment.topCenter,
+                  height: 100,
+                  width: 100,
+                  colorFilter: ColorFilter.mode(
                     Theme.of(context).colorScheme.primary, BlendMode.srcIn
                 ),
-
               ),
 
                 Text("Login",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.primary,
+                  fontSize: 20,
+                  height: 2,
                 ),
                 ),
                 const SizedBox(height: 20,),
@@ -55,7 +64,12 @@ class LoginView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const ForgotPasswordView())
+                              );
+                            },
                             child: Text('Did you forget your password?',
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
@@ -69,6 +83,55 @@ class LoginView extends StatelessWidget {
                 MyButtonForm(
                   text: 'Login',
                   onTab: (){},
+                ),
+                const SizedBox(height: 20,),
+                const LoginDivider(),
+                const SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MySocialButtons(
+                      onTap: (){},
+                      imagePath: 'assets/icons/facebook.png',
+                    ),
+                    const SizedBox(width: 20,),
+                    MySocialButtons(
+                      onTap: (){},
+                      imagePath: 'assets/icons/google.png',
+                    ),
+                    const SizedBox(width: 20,),
+                    MySocialButtons(
+                      onTap: (){},
+                      imagePath: 'assets/icons/twitter.png',
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 50,),
+                Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 1.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don't have an account?",
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary
+                          ),
+                        ),
+                      TextButton(
+                        onPressed: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const RegisterView())
+                          );
+                        },
+                        child: Text('Sign up',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary
+                        ),)
+                      )
+                      ],
+                    ),
                 )
               ],
             ),
