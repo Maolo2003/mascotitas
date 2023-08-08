@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/form_text_field.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/my_button_form.dart';
+import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
 import '../../../config/themes/theme.dart';
 
 class RegisterView extends StatelessWidget {
 
   static const String name = 'register_view';
+  final _emailAddress = TextEditingController();
+  final _name = TextEditingController();
+  final _lastName = TextEditingController();
+  final _username = TextEditingController();
+  final _password = TextEditingController();
+  final _confirmPassword = TextEditingController();
 
-  const RegisterView({super.key});
+  RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,52 +43,62 @@ class RegisterView extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20,),
-                const MyFormTextField(
+                MyFormTextField(
                   labelText: 'Name',
                   hintText: 'Enter your name...',
-                  textInputType: TextInputType.emailAddress,
+                  textInputType: TextInputType.text,
                   obscureText: false,
                   suffixIcon: false,
+                  controller: _name,
                 ),
                 const SizedBox(height: 20,),
-                const MyFormTextField(
+                MyFormTextField(
                   labelText: 'Last Name',
                   hintText: 'Enter your last name...',
-                  textInputType: TextInputType.emailAddress,
+                  textInputType: TextInputType.text,
                   obscureText: false,
                   suffixIcon: false,
+                  controller: _lastName,
                 ),
                 const SizedBox(height: 20,),
-                const MyFormTextField(
+                MyFormTextField(
                   labelText: 'Username',
                   hintText: 'Enter your username...',
-                  textInputType: TextInputType.emailAddress,
+                  textInputType: TextInputType.text,
                   obscureText: false,
                   suffixIcon: false,
+                  controller: _username,
+
                 ),
                 const SizedBox(height: 20,),
-                const MyFormTextField(
+                MyFormTextField(
                   labelText: 'Email',
                   hintText: 'Enter your email address...',
                   textInputType: TextInputType.emailAddress,
                   obscureText: false,
                   suffixIcon: false,
+                  controller: _emailAddress,
+
                 ),
                 const SizedBox(height: 20,),
-                const MyFormTextField(
+                MyFormTextField(
                   labelText: 'Password',
                   hintText: 'Enter your password...',
                   textInputType: TextInputType.visiblePassword,
                   obscureText: true,
                   suffixIcon: true,
+                  controller: _password,
+
                 ),
                 const SizedBox(height: 20,),
-                const MyFormTextField(
+                MyFormTextField(
                   labelText: ' Confirm password',
                   hintText: 'Enter your password confirmation...',
                   textInputType: TextInputType.visiblePassword,
                   obscureText: true,
                   suffixIcon: true,
+                  controller: _confirmPassword,
+
                 ),
                 const SizedBox(height: 20,),
                 MyButtonForm(
