@@ -1,20 +1,19 @@
-import 'package:go_router/go_router.dart';
-import 'package:mascotitas/app/presentation/views/login/widgets/login_divider.dart';
-import 'package:mascotitas/app/presentation/widgets/my_button_form.dart';
-import 'package:mascotitas/app/presentation/widgets/form_text_field.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mascotitas/app/presentation/widgets/my_social_button.dart';
-
+import 'package:mascotitas/app/presentation/views/login/widgets/login_divider.dart';
 import '../register/register_view.dart';
+import 'package:mascotitas/app/presentation/widgets/links_common_widgets.dart';
+export'package:flutter/gestures.dart';
+export 'package:go_router/go_router.dart';
 
 
 class LoginView extends StatelessWidget {
 
   static const String name = 'login_view';
+  final _emailAddress = TextEditingController();
+  final _visiblePassword = TextEditingController();
 
-  const LoginView({super.key});
+  LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,20 +42,22 @@ class LoginView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20,),
                   //Tex field
-                  const FormTextField(
+                  FormTextField(
                     labelText: 'Email',
                     hintText: 'Enter your email',
                     textInputType: TextInputType.emailAddress,
-                    obscureText: true,
-                    suffixIcon: true,
+                    obscureText: false,
+                    suffixIcon: false,
+                    controller: _emailAddress,
                   ),
                   const SizedBox(height: 20,),
-                  const FormTextField(
+                   FormTextField(
                     labelText: 'Password',
                     hintText: 'Password',
-                    textInputType: TextInputType.emailAddress,
+                    textInputType: TextInputType.visiblePassword,
                     obscureText: true,
-                    suffixIcon: false,
+                    suffixIcon: true,
+                    controller: _visiblePassword,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 1.0),
@@ -80,7 +81,10 @@ class LoginView extends StatelessWidget {
                   ButtonForm(
 
                       text: 'login',
-                      onTab: (){}
+                      onTab: (){
+                        print('Email Address: ${_emailAddress.text}');
+                        print('Password: ${_visiblePassword.text}');
+                      },
                   ),
                   const SizedBox(height: 20,),
                   //Divider
