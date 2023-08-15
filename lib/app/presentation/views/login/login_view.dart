@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sekerme_ecommerce/app/presentation/views/forgot_password/forgot_%20password_view.dart';
-import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_divider.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
+import 'package:mascoticas_carlos/app/presentation/views/forgot_password/forgot_%20password_view.dart';
+import 'package:mascoticas_carlos/app/presentation/views/login/widgets/login_divider.dart';
+import 'package:mascoticas_carlos/app/presentation/widgets/links_common_widgets.dart';
 import '../../../config/themes/theme.dart';
 import '../register/register_view.dart';
 

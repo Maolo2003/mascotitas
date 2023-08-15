@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
+import 'package:mascoticas_carlos/app/presentation/widgets/links_common_widgets.dart';
 import '../../widgets/my_social_buttons.dart';
 import '../login/widgets/login_divider.dart';
 import '../register/register_view.dart';

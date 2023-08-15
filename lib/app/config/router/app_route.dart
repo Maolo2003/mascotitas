@@ -5,7 +5,8 @@
 import 'package:go_router/go_router.dart';
 
 //Archivo que contiene los links de las vistas
-import 'package:mascoticas/app/presentation/views/views_links.dart';
+import 'package:mascoticas_carlos/app/presentation/views/views_links.dart';
+
 
 
 final appRouter = GoRouter(
@@ -21,12 +22,12 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/register',
       name: RegisterView.name,
-      builder: (context, state) => const RegisterView(),
+      builder: (context, state) => RegisterView(),
     ),
     GoRoute(
       path: '/login',
       name: LoginView.name,
-      builder: (context, state) => const LoginView(),
+      builder: (context, state) => LoginView(),
     ),
 
   ],
