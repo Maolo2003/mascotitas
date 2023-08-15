@@ -134,7 +134,7 @@ class LoginView extends StatelessWidget {
                               onPressed:(){
                                 Navigator.push(context,
                                   MaterialPageRoute(
-                                    builder: (context) => const RegisterView()
+                                    builder: (context) =>  RegisterView()
                                   ),
                                 );
                               },
