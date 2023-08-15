@@ -1,0 +1,16 @@
+child: Column(
+              children: [
+                //Logo
+                SvgPicture.asset('assets/images/logo_mascotitas.svg',
+                  colorFilter:  ColorFilter.mode(
+                      Theme.of(context).colorScheme.primary, BlendMode.srcIn
+                  ),
+                ),
+
+
+
+                //Form
+                //Button
+                //TextButton
+              ],
+            ),
