@@ -1,4 +1,4 @@
-name: mascoticas
+name: mascoticas_carlos
 description: E-commerce app for product sales.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -46,12 +46,14 @@ dependencies:
   flutter_svg: ^2.0.7
   flutter_dotenv: ^5.1.0
   supabase_flutter: ^1.10.11
+  bloc: ^8.1.2
   #fire base core Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.
   #firebase_core: ^2.15.0
   #clud firestore Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.
   #cloud_firestore: ^4.8.3
   #firebase storage Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.
   #firebase_auth: ^4.7.1
+
 
 dev_dependencies:
   flutter_test:

@@ -1,30 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sekerme_ecommerce/app/presentation/views/register/widgets/my_check_box.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
-import '../../../config/security/encript.dart';
+import 'package:mascoticas_carlos/app/presentation/widgets/links_common_widgets.dart';
 import '../../../config/themes/theme.dart';
-import '../home/home_view.dart';
 
-class RegisterView extends StatefulWidget {
+class RegisterView extends StatelessWidget {
 
   static const String name = 'register_view';
-
-  const RegisterView({super.key});
-
-  @override
-  State<RegisterView> createState() => _RegisterViewState();
-}
-
-class _RegisterViewState extends State<RegisterView> {
-
   final _emailAddress = TextEditingController();
   final _name = TextEditingController();
   final _lastName = TextEditingController();
   final _username = TextEditingController();
   final _password = TextEditingController();
   final _confirmPassword = TextEditingController();
-  bool _checkBox = false;
+
+  RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -109,48 +98,12 @@ class _RegisterViewState extends State<RegisterView> {
                   obscureText: true,
                   suffixIcon: true,
                   controller: _confirmPassword,
-                ),
-                const SizedBox(height: 20,),
-                MyCheckBox(
-                    onChanged: (bool? value) {
-                      setState(() {
-                        _checkBox = value!;
-                      });
-                    },
-                    value: _checkBox
+
                 ),
                 const SizedBox(height: 20,),
                 MyButtonForm(
                   text: 'Register',
-                  onTab: (){
-                    if(_checkBox==false){
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: const Text('You must accept the terms and conditions'),
-                            backgroundColor: Theme.of(context).colorScheme.error,
-                            duration: const Duration(seconds: 2),
-
-                          )
-                      );
-                    }else{
-                      print(encript(_password.text));
-                      print(encript(_confirmPassword.text));
-                      if(_password.text==_confirmPassword.text){
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: const Text('You are registered'),
-                              backgroundColor: Theme.of(context).colorScheme.primary,
-                              duration: const Duration(seconds: 2),
-                            )
-                        );
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const HomeView())
-                        );
-                      }
-                    }
-
-                  },
+                  onTab: (){},
                 )
               ],
             ),
