@@ -4,6 +4,7 @@ import 'package:sekerme_ecommerce/app/presentation/views/register/widgets/my_che
 import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
 import '../../../config/security/encript.dart';
 import '../../../config/themes/theme.dart';
+import '../home/home_view.dart';
 
 class RegisterView extends StatefulWidget {
 
@@ -140,11 +141,15 @@ class _RegisterViewState extends State<RegisterView> {
                               content: const Text('You are registered'),
                               backgroundColor: Theme.of(context).colorScheme.primary,
                               duration: const Duration(seconds: 2),
-
                             )
+                        );
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const HomeView())
                         );
                       }
                     }
+
                   },
                 )
               ],
