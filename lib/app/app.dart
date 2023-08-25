@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mascotitas/app/config/router/app_route.dart';
-import 'package:mascotitas/app/presentation/bloc/auth/auth_bloc.dart';
-
+import 'package:mascotitas/app/presentation/bloc/auth/internet_basic_bloc.dart';
 import 'config/themes/theme.dart';
 export 'presentation/views/views_links.dart';
 
@@ -15,8 +14,8 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         // aqui se agregan los bloc
-        BlocProvider<AuthBloc>(
-            create: (_) => AuthBloc(),
+        BlocProvider<InternetBasicBloc>(
+          create: (context) => InternetBasicBloc(),
         )
       ],
       child: MaterialApp.router(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mascotitas/app/presentation/views/forgot_password/forgot_%20password_view.dart';
 import 'package:mascotitas/app/presentation/views/login/widgets/login_divider.dart';
 import '../register/register_view.dart';
 import 'package:mascotitas/app/presentation/widgets/links_common_widgets.dart';
@@ -65,7 +66,13 @@ class LoginView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         TextButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) =>   ForgotPasswordView()
+                              ),
+                            );
+                          },
                           child: Text('¿Forgot your Password?',
                             style: TextStyle(
                               color: Theme.of(context).colorScheme.primary,
@@ -138,7 +145,7 @@ class LoginView extends StatelessWidget {
                                   ),
                                 );
                               },
-                              child: Text('Sing up',
+                              child: Text('Register',
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
                                 ),
