@@ -7,14 +7,17 @@ import '../../../config/themes/theme.dart';
 import '../register/register_view.dart';
 
 
-class AppointmentView extends StatelessWidget {
+class AppointmentsView extends StatelessWidget {
 
-  static const String name = 'login_view';
-  final _emailAddress = TextEditingController();
-  final _visiblePassword = TextEditingController();
+  static const String name = 'appointments_view';
+  final _branch = TextEditingController();
+  final _service = TextEditingController();
+  final _specialist = TextEditingController();
+  final _date = TextEditingController();
+  final _time = TextEditingController();
+  final _pet = TextEditingController();
 
-
-  AppointmentView({super.key});
+  AppointmentsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +53,7 @@ class AppointmentView extends StatelessWidget {
                     textInputType: TextInputType.emailAddress,
                     obscureText: false,
                     suffixIcon: false,
-                    controller: _emailAddress,
+                    controller: _branch,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
@@ -59,7 +62,7 @@ class AppointmentView extends StatelessWidget {
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _service,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
@@ -68,7 +71,7 @@ class AppointmentView extends StatelessWidget {
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _specialist,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
@@ -77,7 +80,7 @@ class AppointmentView extends StatelessWidget {
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _date,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
@@ -86,7 +89,7 @@ class AppointmentView extends StatelessWidget {
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _time,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
@@ -95,7 +98,7 @@ class AppointmentView extends StatelessWidget {
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _pet,
                   ),
                   const SizedBox(height: 20,),
                   MyButtonForm(

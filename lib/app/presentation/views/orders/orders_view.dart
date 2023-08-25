@@ -9,9 +9,13 @@ import '../register/register_view.dart';
 
 class OrdersView extends StatelessWidget {
 
-  static const String name = 'login_view';
-  final _emailAddress = TextEditingController();
-  final _visiblePassword = TextEditingController();
+
+  static const String name = 'orders_view';
+  final _date = TextEditingController();
+  final _client = TextEditingController();
+  final _products = TextEditingController();
+  final _employee = TextEditingController();
+  final _total = TextEditingController();
 
   OrdersView({super.key});
 
@@ -35,7 +39,7 @@ class OrdersView extends StatelessWidget {
                     ),
                   ),
 
-                  Text("Sales",
+                  Text("Orders",
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontSize: 20,
@@ -44,48 +48,48 @@ class OrdersView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
-                    labelText: 'Client',
-                    hintText: 'Enter the client who made the order...',
+                    labelText: 'Date',
+                    hintText: 'Enter the date the bill was made...',
                     textInputType: TextInputType.emailAddress,
                     obscureText: false,
                     suffixIcon: false,
-                    controller: _emailAddress,
+                    controller: _date,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
-                    labelText: 'Date',
-                    hintText: 'Enter the date the client made the order...',
+                    labelText: 'Client',
+                    hintText: 'Enter the client who made the purchase...',
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
-                  ),
-                  const SizedBox(height: 20,),
-                  MyFormTextField(
-                    labelText: 'Products',
-                    hintText: 'Enter the products the client ordered...',
-                    textInputType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    suffixIcon: true,
-                    controller: _visiblePassword,
-                  ),
-                  const SizedBox(height: 20,),
-                  MyFormTextField(
-                    labelText: 'Total',
-                    hintText: "Enter the order's value...",
-                    textInputType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _client,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
                     labelText: 'Employee',
-                    hintText: 'Enter the employee who received the order...',
+                    hintText: 'Enter the employee who made the sale...',
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _employee,
+                  ),
+                  const SizedBox(height: 20,),
+                  MyFormTextField(
+                    labelText: 'Products',
+                    hintText: "Enter the products the client purchased...",
+                    textInputType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    suffixIcon: true,
+                    controller: _products,
+                  ),
+                  const SizedBox(height: 20,),
+                  MyFormTextField(
+                    labelText: 'Total',
+                    hintText: 'Enter the full value of the purchase...',
+                    textInputType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    suffixIcon: true,
+                    controller: _total,
                   ),
                   const SizedBox(height: 20,),
                   MyButtonForm(

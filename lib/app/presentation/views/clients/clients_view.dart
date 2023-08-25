@@ -5,7 +5,7 @@ import '../../../config/themes/theme.dart';
 
 class ClientsView extends StatelessWidget {
 
-  static const String name = 'register_view';
+  static const String name = 'clients_view';
   final _emailAddress = TextEditingController();
   final _name = TextEditingController();
   final _lastName = TextEditingController();
@@ -92,7 +92,7 @@ class ClientsView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
-                    labelText: ' Confirm password',
+                    labelText: 'Confirm password',
                     hintText: 'Enter your password confirmation...',
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,

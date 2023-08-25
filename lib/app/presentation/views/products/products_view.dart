@@ -10,8 +10,10 @@ import '../register/register_view.dart';
 class ProductsView extends StatelessWidget {
 
   static const String name = 'login_view';
-  final _emailAddress = TextEditingController();
-  final _visiblePassword = TextEditingController();
+  final _description = TextEditingController();
+  final _price = TextEditingController();
+  final _expirationDate = TextEditingController();
+  final _stock = TextEditingController();
 
   ProductsView({super.key});
 
@@ -49,25 +51,16 @@ class ProductsView extends StatelessWidget {
                     textInputType: TextInputType.emailAddress,
                     obscureText: false,
                     suffixIcon: false,
-                    controller: _emailAddress,
+                    controller: _description,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
                     labelText: 'Price',
-                    hintText: 'Enter the price of the product...',
-                    textInputType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    suffixIcon: true,
-                    controller: _visiblePassword,
-                  ),
-                  const SizedBox(height: 20,),
-                  MyFormTextField(
-                    labelText: 'Value',
                     hintText: 'Enter the price of the product per unit...',
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _price,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
@@ -76,7 +69,7 @@ class ProductsView extends StatelessWidget {
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _expirationDate,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
@@ -85,7 +78,7 @@ class ProductsView extends StatelessWidget {
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _visiblePassword,
+                    controller: _stock,
                   ),
                   const SizedBox(height: 20,),
                   MyButtonForm(

@@ -7,16 +7,14 @@ import '../../../config/themes/theme.dart';
 import '../register/register_view.dart';
 
 
-class BillsView extends StatelessWidget {
+class ServicesView extends StatelessWidget {
 
-  static const String name = 'bills_view';
-  final _date = TextEditingController();
-  final _client = TextEditingController();
-  final _products = TextEditingController();
-  final _employee = TextEditingController();
-  final _total = TextEditingController();
+  static const String name = 'services_view';
+  final _description = TextEditingController();
+  final _duration = TextEditingController();
+  final _value = TextEditingController();
 
-  BillsView({super.key});
+  ServicesView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +36,7 @@ class BillsView extends StatelessWidget {
                     ),
                   ),
 
-                  Text("Bills",
+                  Text("Services",
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontSize: 20,
@@ -47,48 +45,30 @@ class BillsView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
-                    labelText: 'Date',
-                    hintText: 'Enter the date the bill was made...',
+                    labelText: 'Description',
+                    hintText: 'Enter the description of the service...',
                     textInputType: TextInputType.emailAddress,
                     obscureText: false,
                     suffixIcon: false,
-                    controller: _date,
+                    controller: _description,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
-                    labelText: 'Client',
-                    hintText: 'Enter the client who made the purchase...',
+                    labelText: 'Value',
+                    hintText: 'Enter the price of the service...',
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _client,
+                    controller: _value,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
-                    labelText: 'Employee',
-                    hintText: 'Enter the employee who made the sale...',
+                    labelText: 'Duration',
+                    hintText: 'Enter the duration of the service...',
                     textInputType: TextInputType.visiblePassword,
                     obscureText: true,
                     suffixIcon: true,
-                    controller: _employee,
-                  ),
-                  const SizedBox(height: 20,),
-                  MyFormTextField(
-                    labelText: 'Products',
-                    hintText: "Enter the products the client purchased...",
-                    textInputType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    suffixIcon: true,
-                    controller: _products,
-                  ),
-                  const SizedBox(height: 20,),
-                  MyFormTextField(
-                    labelText: 'Total',
-                    hintText: 'Enter the full value of the purchase...',
-                    textInputType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    suffixIcon: true,
-                    controller: _total,
+                    controller: _duration,
                   ),
                   const SizedBox(height: 20,),
                   MyButtonForm(

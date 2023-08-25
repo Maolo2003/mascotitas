@@ -5,13 +5,11 @@ import '../../../config/themes/theme.dart';
 
 class PetsView extends StatelessWidget {
 
-  static const String name = 'register_view';
-  final _emailAddress = TextEditingController();
+  static const String name = 'pets_view';
   final _name = TextEditingController();
-  final _lastName = TextEditingController();
-  final _username = TextEditingController();
-  final _password = TextEditingController();
-  final _confirmPassword = TextEditingController();
+  final _species = TextEditingController();
+  final _breed = TextEditingController();
+  final _birthdate = TextEditingController();
 
   PetsView({super.key});
 
@@ -58,7 +56,7 @@ class PetsView extends StatelessWidget {
                     textInputType: TextInputType.text,
                     obscureText: false,
                     suffixIcon: false,
-                    controller: _lastName,
+                    controller: _species,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(
@@ -67,7 +65,7 @@ class PetsView extends StatelessWidget {
                     textInputType: TextInputType.text,
                     obscureText: false,
                     suffixIcon: false,
-                    controller: _username,
+                    controller: _breed,
 
                   ),
                   const SizedBox(height: 20,),
@@ -77,7 +75,7 @@ class PetsView extends StatelessWidget {
                     textInputType: TextInputType.emailAddress,
                     obscureText: false,
                     suffixIcon: false,
-                    controller: _emailAddress,
+                    controller: _birthdate,
                   ),
                   const SizedBox(height: 20,),
                   MyButtonForm(

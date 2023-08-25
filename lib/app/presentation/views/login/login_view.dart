@@ -4,6 +4,7 @@ import 'package:sekerme_ecommerce/app/presentation/views/forgot_password/forgot_
 import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_divider.dart';
 import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
 import '../../../config/themes/theme.dart';
+import '../home/home_view.dart';
 import '../register/register_view.dart';
 
 
@@ -86,8 +87,10 @@ class LoginView extends StatelessWidget {
                 MyButtonForm(
                   text: 'Login',
                   onTab: (){
-                    print('Email address: ${_emailAddress.text}');
-                    print('Email address: ${_visiblePassword.text}');
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const HomeView())
+                    );
                   },
                 ),
                 const SizedBox(height: 20,),
@@ -128,7 +131,7 @@ class LoginView extends StatelessWidget {
                         onPressed: (){
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => RegisterView())
+                            MaterialPageRoute(builder: (context) => const RegisterView())
                           );
                         },
                         child: Text('Sign up',
