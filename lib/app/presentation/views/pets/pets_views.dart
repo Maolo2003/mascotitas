@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
+import 'package:mascoticas_carlos/app/presentation/widgets/links_common_widgets.dart';
 import '../../../config/themes/theme.dart';
 
 class PetsView extends StatelessWidget {

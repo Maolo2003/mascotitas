@@ -18,7 +18,7 @@ class MyFormTextField extends StatelessWidget {
         required this.hintText,
         required this.textInputType,
         required this.obscureText,
-        required this.suffixIcon
+        required this.suffixIcon, required TextEditingController controller
       }
       );
 

@@ -6,7 +6,15 @@ import 'package:go_router/go_router.dart';
 
 //Archivo que contiene los links de las vistas
 import 'package:mascoticas_carlos/app/presentation/views/views_links.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../../presentation/views/appointments/appointment_view.dart';
+import '../../presentation/views/bills/bills_view.dart';
+import '../../presentation/views/forgot_password/forgot_ password_view.dart';
+import '../../presentation/views/orders/orders_view.dart';
+import '../../presentation/views/pets/pets_views.dart';
+import '../../presentation/views/services/services_view.dart';
+import '../../presentation/views/clients/clients_view.dart';
 
 
 final appRouter = GoRouter(
@@ -16,6 +24,16 @@ final appRouter = GoRouter(
   routes: [
     GoRoute(
       path: '/',
+      builder: (context, state) {
+        if(Supabase.instance.client.auth.currentUser != null){
+          return const HomeView();
+        } else {
+          return LoginView();
+        }
+      },
+    ),
+    GoRoute(
+      path: '/home',
       name: HomeView.name,
       builder: (context, state) => const HomeView(),
     ),
@@ -29,7 +47,41 @@ final appRouter = GoRouter(
       name: LoginView.name,
       builder: (context, state) => LoginView(),
     ),
-
+    GoRoute(
+      path: '/forgot_password',
+      name: ForgotPasswordView.name,
+      builder: (context, state) => ForgotPasswordView(),
+    ),
+    GoRoute(
+      path: '/appointments',
+      name: AppointmentsView.name,
+      builder: (context,state) => AppointmentsView(),
+    ),
+    GoRoute(
+      path: '/bills',
+      name: BillsView.name,
+      builder: (context,state) => BillsView(),
+    ),
+    GoRoute(
+      path: '/clients',
+      name: ClientsView.name,
+      builder: (context, state) => ClientsView(),
+    ),
+    GoRoute(
+      path: '/orders',
+      name: OrdersView.name,
+      builder: (context, state) => OrdersView(),
+    ),
+    GoRoute(
+      path: '/pets',
+      name: PetsView.name,
+      builder: (context, state) => PetsView(),
+    ),
+    GoRoute(
+      path: '/services',
+      name: ServicesView.name,
+      builder: (context, state) => ServicesView(),
+    ),
   ],
 
 );
