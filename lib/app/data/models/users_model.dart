@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 
-class ClientsModel {
+class UsersModel {
   final String? name;
   final String? lastName;
   final String? username;
   final String? emailAddress;
   final String? password;
+  final String? phoneNumber;
 
-  ClientsModel({
+  UsersModel({
     this.name,
     this.lastName,
     this.username,
     this.emailAddress,
-    this.password
+    this.password,
+    this.phoneNumber
   });
 
-static ClientsModel fromJson(Map<String, dynamic> json) => ClientsModel(
+static UsersModel fromJson(Map<String, dynamic> json) => UsersModel(
   name: json["name"],
   lastName: json["lastName"],
   username: json["username"],
   emailAddress: json["emailAddress"],
-  password: json["password"]
+  password: json["password"],
+  phoneNumber: json["phoneNumber"]
 );
 
   Map<String, dynamic> toJson() => <String, dynamic>{
@@ -28,6 +31,7 @@ static ClientsModel fromJson(Map<String, dynamic> json) => ClientsModel(
         'lastName': lastName,
         'username': username,
         'emailAddress': emailAddress,
-        'password': password
+        'password': password,
+        'phoneNumber': phoneNumber
       };
 }

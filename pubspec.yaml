@@ -49,6 +49,9 @@ dependencies:
   bloc: ^8.1.2
   crypto: ^3.0.3
   intl: ^0.18.1
+  image_picker: ^0.8.4
+
+
   #fire base core Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.
   #firebase_core: ^2.15.0
   #clud firestore Un paquete de Flutter que proporciona una API de plataforma unificada para autenticación, Cloud Firestore, Cloud Functions, Cloud Messaging, Cloud Storage, Remote Config y más.

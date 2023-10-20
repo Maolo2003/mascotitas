@@ -3,17 +3,18 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
 import '../../../config/themes/theme.dart';
 
-class ClientsView extends StatelessWidget {
+class UsersView extends StatelessWidget {
 
   static const String name = 'clients_view';
   final _emailAddress = TextEditingController();
+  final _phoneNumber = TextEditingController();
   final _name = TextEditingController();
   final _lastName = TextEditingController();
   final _username = TextEditingController();
   final _password = TextEditingController();
   final _confirmPassword = TextEditingController();
 
-  ClientsView({super.key});
+  UsersView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class ClientsView extends StatelessWidget {
 
                 ),
 
-                  Text("Clients",
+                  Text("Users",
                     style: TextStyle(
                       fontSize: 20,
                       height: 2,
@@ -78,7 +79,15 @@ class ClientsView extends StatelessWidget {
                     obscureText: false,
                     suffixIcon: false,
                     controller: _emailAddress,
-
+                  ),
+                  const SizedBox(height: 20,),
+                  MyFormTextField(
+                    labelText: 'Phone number',
+                    hintText: 'Enter your phone number...',
+                    textInputType: TextInputType.text,
+                    obscureText: false,
+                    suffixIcon: false,
+                    controller: _phoneNumber,
                   ),
                   const SizedBox(height: 20,),
                   MyFormTextField(

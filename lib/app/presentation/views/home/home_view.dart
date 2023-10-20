@@ -7,12 +7,12 @@ import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_div
 import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
 import '../../../config/themes/theme.dart';
 import '../appointments/appointment_view.dart';
-import '../clients/clients_view.dart';
 import '../orders/orders_view.dart';
 import '../pets/pets_views.dart';
 import '../products/products_view.dart';
 import '../register/register_view.dart';
 import '../services/services_view.dart';
+import '../users/users_view.dart';
 
 
 class HomeView extends StatelessWidget {
@@ -68,11 +68,11 @@ class HomeView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20,),
                   MyButtonForm(
-                    text: 'Clients',
+                    text: 'Users',
                     onTab: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ClientsView())
+                          MaterialPageRoute(builder: (context) => UsersView())
                       );
                     },
                   ),

@@ -1,21 +1,93 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sekerme_ecommerce/app/presentation/views/forgot_password/forgot_%20password_view.dart';
 import 'package:sekerme_ecommerce/app/presentation/views/login/widgets/login_divider.dart';
 import 'package:sekerme_ecommerce/app/presentation/widgets/links_common_widgets.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import '../../../../main.dart';
 import '../../../config/themes/theme.dart';
+import '../../bloc/auth/auth_bloc.dart';
 import '../home/home_view.dart';
 import '../register/register_view.dart';
 
-
-class LoginView extends StatelessWidget {
+class LoginView extends StatefulWidget {
 
   static const String name = 'login_view';
-  final _emailAddress = TextEditingController();
-  final _visiblePassword = TextEditingController();
-
 
   LoginView({super.key});
+
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
+
+  bool _isLoading = false;
+  bool _redirecting = false;
+  final _emailAddress = TextEditingController();
+
+  final _visiblePassword = TextEditingController();
+
+  late final StreamSubscription<AuthState> _authStateSubscription;
+
+
+  Future<void> _signIn() async {
+    try {
+      setState(() {
+        _isLoading = true;
+      });
+      await supabase.auth.signInWithOtp(
+        email: _emailAddress.text.trim(),
+        emailRedirectTo:
+        kIsWeb ? null : 'io.supabase.flutterquickstart://login-callback/',
+      );
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Check your email for a login link!')),
+        );
+        _emailAddress.clear();
+      }
+    } on AuthException catch (error) {
+      SnackBar(
+        content: Text(error.message),
+        backgroundColor: Theme.of(context).colorScheme.error,
+      );
+    } catch (error) {
+      SnackBar(
+        content: const Text('Unexpected error occurred'),
+        backgroundColor: Theme.of(context).colorScheme.error,
+      );
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
+    }
+  }
+
+  @override
+  void initState() {
+    _authStateSubscription = supabase.auth.onAuthStateChange.listen((data) {
+      if (_redirecting) return;
+      final session = data.session;
+      if (session != null) {
+        _redirecting = true;
+        Navigator.of(context).pushReplacementNamed('/account');
+      }
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _authStateSubscription.cancel();
+    _emailAddress.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -87,10 +159,8 @@ class LoginView extends StatelessWidget {
                 MyButtonForm(
                   text: 'Login',
                   onTab: (){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const HomeView())
-                    );
+                    _isLoading ? null : _signIn;
+                    //Navigator.push(context,MaterialPageRoute(builder: (context) => const HomeView()));
                   },
                 ),
                 const SizedBox(height: 20,),
